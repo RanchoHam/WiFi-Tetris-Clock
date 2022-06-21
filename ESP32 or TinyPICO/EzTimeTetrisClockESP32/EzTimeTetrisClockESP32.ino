@@ -53,12 +53,12 @@
 // ---- Stuff to configure ----
 
 // Initialize Wifi connection to the router
-char ssid[] = "SSID";     // your network SSID (name)
-char password[] = "password"; // your network key
+char ssid[] = "IoT";     // your network SSID (name)
+char password[] = "WB0NREandKD6SA"; // your network key
 
 // Set a timezone using the following list
 // https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-#define MYTIMEZONE "Europe/Dublin"
+#define MYTIMEZONE "America/Los_Angeles"
 
 // Sets whether the clock should be 12 hour format or not.
 bool twelveHourFormat = true;
@@ -77,9 +77,9 @@ bool forceRefresh = true;
 #define P_C 18
 #define P_D 5
 #define P_E 15
-#define P_OE 26 //TinyPICO
+//#define P_OE 26 //TinyPICO
 //#define P_OE 21 //Huzzah32
-//#define P_OE 2 // Generic ESP32
+#define P_OE 2 // Generic ESP32
 // ---------------------
 
 portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
@@ -214,8 +214,8 @@ void setup() {
   // as it will crash!
 
   // Intialise display library
-  display.begin(16, SPI_BUS_CLK, 27, SPI_BUS_MISO, SPI_BUS_SS); // TinyPICO
-  //display.begin(16); // Generic ESP32 including Huzzah
+  //display.begin(16, SPI_BUS_CLK, 27, SPI_BUS_MISO, SPI_BUS_SS); // TinyPICO
+  display.begin(16); // Generic ESP32 including Huzzah
   display.flushDisplay();
 
   // Setup timer for driving display
@@ -260,7 +260,7 @@ void setup() {
   delay(2000);
 
   // Start the Animation Timer
-  tetris.setText("TINY PICO");
+  tetris.setText("D1 Mini");
   animationTimer = timerBegin(1, 80, true);
   timerAttachInterrupt(animationTimer, &animationHandler, true);
   timerAlarmWrite(animationTimer, 100000, true);

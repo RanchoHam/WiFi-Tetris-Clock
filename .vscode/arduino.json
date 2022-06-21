@@ -1,0 +1,7 @@
+{
+    "configuration": "FlashFreq=80,PartitionScheme=default,CPUFreq=240,UploadSpeed=921600,DebugLevel=none",
+    "board": "esp32:esp32:d1_mini32",
+    "programmer": "esp32:esptool",
+    "port": "COM5",
+    "sketch": "ESP32 or TinyPICO\\EzTimeTetrisClockESP32\\EzTimeTetrisClockESP32.ino"
+}

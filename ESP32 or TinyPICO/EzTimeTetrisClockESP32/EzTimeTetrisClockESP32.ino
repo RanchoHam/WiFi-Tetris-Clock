@@ -53,8 +53,8 @@
 // ---- Stuff to configure ----
 
 // Initialize Wifi connection to the router
-char ssid[] = "IoT";     // your network SSID (name)
-char password[] = "WB0NREandKD6SA"; // your network key
+char ssid[] = "Staff";     // your network SSID (name)
+char password[] = "w6katANDkd6sa"; // your network key
 
 // Set a timezone using the following list
 // https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -260,7 +260,7 @@ void setup() {
   delay(2000);
 
   // Start the Animation Timer
-  tetris.setText("D1 Mini");
+  tetris.setText("D1 MINI32");
   animationTimer = timerBegin(1, 80, true);
   timerAttachInterrupt(animationTimer, &animationHandler, true);
   timerAlarmWrite(animationTimer, 100000, true);
